@@ -1,3 +1,4 @@
+//æ‹“æ‰‘æ’åºä»£ç 
 #include<stdio.h>
 #include<vector>
 #include<stdlib.h> 
@@ -22,12 +23,12 @@
 
 using namespace std;
 
-vector<int> G[maxn]; //ÁÚ½Ó±í´æ·ÅÍ¼ 
-vector<int> temp;   //Ôİ´æÈë¶ÈÎª0µÄ½Úµã 
-int indegree[maxn]={0};   //´æ·ÅÈë¶È£¬³õÊ¼»¯Îª0 
-bool tag[maxn]={false};  //½ÚµãÊÇ·ñÒÑ¾­Êä³ö 
+vector<int> G[maxn]; //é‚»æ¥è¡¨å­˜æ”¾å›¾ 
+vector<int> temp;   //æš‚å­˜å…¥åº¦ä¸º0çš„èŠ‚ç‚¹ 
+int indegree[maxn]={0};   //å­˜æ”¾å…¥åº¦ï¼Œåˆå§‹åŒ–ä¸º0 
+bool tag[maxn]={false};  //èŠ‚ç‚¹æ˜¯å¦å·²ç»è¾“å‡º 
 
-void get_degree(int n)//¸ù¾İÍ¼³õÊ¼»¯Èë¶È 
+void get_degree(int n)//æ ¹æ®å›¾åˆå§‹åŒ–å…¥åº¦ 
 {
 	for(int i=1;i<=n;i++){
 		for(int j=0;j<G[i].size();j++)
@@ -41,8 +42,8 @@ void print(int n)
 {
 	int num=0,k=1;
 	while(num<n){
-		printf("µÚ%dÑ§ÆÚ£º",k);
-		for(int i=1;i<=n;i++)//»ñµÃÈë¶ÈÎª0µÄËùÓĞµã²¢Êä³ö 
+		printf("ç¬¬%då­¦æœŸï¼š",k);
+		for(int i=1;i<=n;i++)//è·å¾—å…¥åº¦ä¸º0çš„æ‰€æœ‰ç‚¹å¹¶è¾“å‡º 
 		{
 			if(indegree[i]==0&&tag[i]==false)
 			{
@@ -54,7 +55,7 @@ void print(int n)
 			
 		}
 		printf("\n");
-		for(int i=0;i<temp.size();i++)//¸ù¾İÒÑ¾­Êä³öµÄµã¸üĞÂÊ£ÏÂµÄµãµÄÈë¶È 
+		for(int i=0;i<temp.size();i++)//æ ¹æ®å·²ç»è¾“å‡ºçš„ç‚¹æ›´æ–°å‰©ä¸‹çš„ç‚¹çš„å…¥åº¦ 
 		{
 			for(int j=0;j<G[temp[i]].size();j++)
 			{
@@ -69,17 +70,17 @@ void print(int n)
 int main()
 {
 	int n;
-	printf("ÇëÑ¡Ôñ¿Î³ÌÊı£º");
+	printf("è¯·é€‰æ‹©è¯¾ç¨‹æ•°ï¼š");
 	scanf("%d",&n);
-	for(int i=1;i<=n;i++)//ÊäÈëÍ¼ 
+	for(int i=1;i<=n;i++)//è¾“å…¥å›¾ 
 	{
 		int k;
-		//printf("´Ë¿Î³Ì½Úµã³ö¶ÈÎª£º"); 
+		//printf("æ­¤è¯¾ç¨‹èŠ‚ç‚¹å‡ºåº¦ä¸ºï¼š"); 
 		scanf("%d",&k);
 		for(int j=0;j<k;j++)
 		{
 			int v;
-			//printf("Ö¸Ïò¿Î³Ì½Úµã£º"); 
+			//printf("æŒ‡å‘è¯¾ç¨‹èŠ‚ç‚¹ï¼š"); 
 			scanf("%d",&v);
 			G[i].push_back(v);
 		}
